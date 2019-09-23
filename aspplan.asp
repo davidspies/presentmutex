@@ -29,7 +29,7 @@ deletedUnused(F,T) :- happens(A,T); del(A,F); not pre(A,F).
     step(T).
 
 % 5.
-:- mutex(F,G,T); holds(F,T); holds(G,T).
+:- mutex(F,G); holds(F,T); holds(G,T).
 
 #show.
 #show happens(A,T) : happens(A,T), not preserving(A).

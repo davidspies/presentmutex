@@ -1,1 +1,1 @@
-clingo aspplan.asp mutex.asp ferry.asp -c k="$@"
+clingo plangraph.asp aspplan.asp mutex.asp ferry.asp -c k="$@"
