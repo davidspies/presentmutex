@@ -30,6 +30,13 @@ deletedUnused(F,T) :- happens(A,T); del(A,F); not pre(A,F).
 
 % 5.
 :- mutex(F,G); holds(F,T); holds(G,T).
+partHolds(P,T) :- inPart(F,P); holds(F,T).
+:- {
+        partHolds(P,T) : isPartitionIn(P,C);
+        holds(F,T) : isSingletonPartIn(F,C)
+    } > 1;
+    isMultiClique(C);
+    step(T).
 
 #show.
 #show happens(A,T) : happens(A,T), not preserving(A).
