@@ -12,4 +12,3 @@ validAction(A,T) :- nonmutexAction(A,A,T).
 validFluent(F,T) :- nonmutexFluent(F,F,T).
 
 mutex(F,G,T) :- validFluent(F,T); validFluent(G,T); not nonmutexFluent(F,G,T).
-mutexAct(A,B,T) :- validAction(A,T); validAction(B,T); not nonmutexAction(A,B,T).

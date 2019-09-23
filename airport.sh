@@ -1,0 +1,1 @@
+clingo aspplan.asp plangraph.asp airport.asp -c k="$@"
